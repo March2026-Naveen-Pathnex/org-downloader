@@ -16,7 +16,7 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder='.')
 CORS(app)
 
-DOWNLOAD_DIR = Path("/tmp/org_downloads")
+DOWNLOAD_DIR = Path("/tmp/downloads")
 DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 progress_store = {}
@@ -167,4 +167,5 @@ def api_open_folder():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print(f"\n  Org — Video Downloader | Port: {port} | yt-dlp: {check_ytdlp()}\n")
-    app.run(host="0.0.0.0", port=port, debug=False)
+   port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port, debug=False)
